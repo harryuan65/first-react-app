@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 class Todos extends Component {
   render() {
     return this.props.todolists.map((d)=>(
-        <TodoItem key= {d.id} todo={d} markComplete={this.props.markComplete}/>
+        <TodoItem key= {d.id} todo={d} markComplete={this.props.markComplete} delTodo={this.props.delTodo}/>
         //key: 對於使用的component的物件最好給他一個key
     ));
   }

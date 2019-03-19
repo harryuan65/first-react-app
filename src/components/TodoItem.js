@@ -26,6 +26,7 @@ const {id,title} = this.props.todo;
         <p style = {this.getStyle()}>
         <input type='checkbox' onChange={this.props.markComplete.bind(this,id)} /> {' '} 
           {id} : {title}
+          <button style={btnStyle} onClick={this.props.delTodo.bind(this,id)}>x</button>
         </p>
       </div>
     )
@@ -35,6 +36,19 @@ const {id,title} = this.props.todo;
 // const itemStyle = {
 //   backgroundColor: '#e3e3e3;'
 // }
+
+
+//padding :top left
+//borderRadius: 50% = round
+const btnStyle = {
+  background: '#ff0000',
+  color: '#fff',
+  border: 'none',
+  padding: '5px 8px',   
+  borderRadius: '50%',
+  cursor: 'pointer',
+  float: 'right'
+}
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired
 }

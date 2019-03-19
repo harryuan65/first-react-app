@@ -32,11 +32,17 @@ markComplete = (id)=>{
     return d;
   }) });
 }
+//... 展開運算子 55:50
+delTodo = (id)=>{
+  this.setState({
+    todos:[ ...this.state.todos.filter(d => d.id!==id)]
+  });
+}
   render() {
     return (
       <div className="App">
           <h1>TestReactApp!</h1>
-          <Todos todolists={this.state.todos} markComplete={this.markComplete}/>
+          <Todos todolists={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
       </div>
     );
   }
